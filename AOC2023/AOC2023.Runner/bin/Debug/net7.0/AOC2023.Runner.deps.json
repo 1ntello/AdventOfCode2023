@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "AOC2023.Runner/1.0.0": {
+        "dependencies": {
+          "AOC2023.Challenges": "1.0.0"
+        },
+        "runtime": {
+          "AOC2023.Runner.dll": {}
+        }
+      },
+      "AOC2023.Challenges/1.0.0": {
+        "runtime": {
+          "AOC2023.Challenges.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AOC2023.Runner/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AOC2023.Challenges/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

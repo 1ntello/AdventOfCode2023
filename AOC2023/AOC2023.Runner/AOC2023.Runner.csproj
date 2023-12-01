@@ -7,4 +7,18 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="challenges\challenge1.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="challenges\challenge1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AOC2023.Challenges\AOC2023.Challenges.csproj" />
+  </ItemGroup>
+
 </Project>
