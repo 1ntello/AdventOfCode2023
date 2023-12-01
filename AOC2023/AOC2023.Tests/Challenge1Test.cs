@@ -23,6 +23,21 @@ namespace AOC2023.Tests
             Assert.That(result, Is.EqualTo(expected));
         }
 
+
+        [Test]
+        [TestCase("two1nine", 29)]
+        [TestCase("eightwothree", 83)]
+        [TestCase("abcone2threexyz", 13)]
+        [TestCase("xtwone3four", 24)]
+        [TestCase("4nineeightseven2", 42)]
+        [TestCase("zoneight234", 14)]
+        [TestCase("7pqrstsixteen", 76)]
+        public void CalculateCalibrationValueWithLetters(string s, int expected)
+        {
+            var result = challenge1.CalculateCalibrationValueWithLettersAndNumbers(s);
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
         [Test]
         public void CalculateTotalOfCalibrationValues()
         {

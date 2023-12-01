@@ -4,6 +4,6 @@ using AOC2023.Challenges;
 Console.WriteLine("Hello, World!");
 
 Challenge1 challenge = new Challenge1();
-var result = challenge.CalculateSumOfCalibrationValues(File.ReadAllLines("challenges/challenge1.txt"));
+var result = challenge.CalculateSumOfCalibrationValuesWithLetters(File.ReadAllLines("challenges/challenge1.txt"));
 Console.WriteLine(result);
 Console.ReadKey();
