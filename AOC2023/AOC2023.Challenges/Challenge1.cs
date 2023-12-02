@@ -69,7 +69,6 @@ namespace AOC2023.Challenges
 
             foreach (var n in numbers)
             {
-
                 // we thought too easy because eightwo is apparently eight and two 
                 // so we have to save the indexes and the number and the indexes of normal numbers
                 if (inputstring.Contains(n.Key))
@@ -85,7 +84,6 @@ namespace AOC2023.Challenges
                     }
 
                 }
-
                 if (inputstring.Contains(n.Value.ToString()))
                 {
                     List<int> foundIndexes = new List<int>();
@@ -100,18 +98,10 @@ namespace AOC2023.Challenges
                     }
                 }
             }
-                
-            
-
             StringBuilder sb = new StringBuilder();
             foreach (var index in indexes.OrderBy(x => x.Key).ToList())
             {
                 sb.Append(index.Value);
-            }
-
-            if (inputstring.Contains("oneight"))
-            {
-                var x = 0;
             }
             Console.WriteLine($"{inputstring} becomes {sb.ToString()}");
             return sb.ToString();
