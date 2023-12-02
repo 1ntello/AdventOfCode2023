@@ -47,7 +47,7 @@ namespace AOC2023.Challenges
             if(numbers.Count() > 1) 
                 return int.Parse($"{numbers.First()}{numbers.Last()}");
             else
-                return int.Parse($"{numbers.First()}");
+                return int.Parse($"{numbers.First()}{numbers.First()}");
         }
 
         public string StringToNumberString(string inputstring)
