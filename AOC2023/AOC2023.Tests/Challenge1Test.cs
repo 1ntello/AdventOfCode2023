@@ -45,5 +45,13 @@ namespace AOC2023.Tests
             var result = challenge1.CalculateSumOfCalibrationValues(calibrationValues);
             Assert.That(result, Is.EqualTo(12 + 38 + 15 + 77));
         }
+
+        [Test]
+        public void CalculateTotalOfCalibrationValuesWithLetters()
+        {
+            string[] calibrationValues = new string[7] { "two1nine", "eightwothree", "abcone2threexyz", "xtwone3four", "4nineeightseven2", "zoneight234", "7pqrstsixteen" };
+            var result = challenge1.CalculateSumOfCalibrationValuesWithLetters(calibrationValues);
+            Assert.That(result, Is.EqualTo(29 + 83 + 13 + 24 + 42 + 14 + 76));
+        }
     }
 }

@@ -22,13 +22,15 @@ namespace AOC2023.Challenges
         public int CalculateSumOfCalibrationValuesWithLetters(string[] data)
         {
             int result = 0;
+            int counter = 0;
             foreach (var item in data)
             {
-                Console.WriteLine(item);
                 var calibratedValue =  CalculateCalibrationValueWithLettersAndNumbers(item);
-                Console.WriteLine(calibratedValue);
+                Console.WriteLine($"{item} becomes {calibratedValue} and we do {result} + {calibratedValue}");
                 result += calibratedValue;
+                counter++;
             }
+            Console.WriteLine(counter);
             return result;
         }
 
@@ -67,21 +69,51 @@ namespace AOC2023.Challenges
 
             foreach (var n in numbers)
             {
+
                 // we thought too easy because eightwo is apparently eight and two 
                 // so we have to save the indexes and the number and the indexes of normal numbers
                 if (inputstring.Contains(n.Key))
-                    indexes.Add(inputstring.IndexOf(n.Key), n.Value.ToString());
+                {
+                    List<int> foundIndexes = new List<int>();
+                    for (int i = inputstring.IndexOf(n.Key); i > -1; i = inputstring.IndexOf(n.Key, i + 1))
+                    {
+                        // for loop end when i=-1 ('a' not found)
+                        foundIndexes.Add(i);
+                    }
+                    foreach (var index in foundIndexes) {
+                        indexes.Add(index, n.Value.ToString());
+                    }
+
+                }
+
                 if (inputstring.Contains(n.Value.ToString()))
-                    indexes.Add(inputstring.IndexOf(n.Value.ToString()), n.Value.ToString());
+                {
+                    List<int> foundIndexes = new List<int>();
+                    for (int i = inputstring.IndexOf(n.Value.ToString()); i > -1; i = inputstring.IndexOf(n.Value.ToString(), i + 1))
+                    {
+                        // for loop end when i=-1 ('a' not found)
+                        foundIndexes.Add(i);
+                    }
+                    foreach (var index in foundIndexes)
+                    {
+                        indexes.Add(index, n.Value.ToString());
+                    }
+                }
             }
+                
+            
 
             StringBuilder sb = new StringBuilder();
             foreach (var index in indexes.OrderBy(x => x.Key).ToList())
             {
                 sb.Append(index.Value);
             }
-            Console.WriteLine(sb.ToString());
-            Console.WriteLine("----");
+
+            if (inputstring.Contains("oneight"))
+            {
+                var x = 0;
+            }
+            Console.WriteLine($"{inputstring} becomes {sb.ToString()}");
             return sb.ToString();
         }
     }
