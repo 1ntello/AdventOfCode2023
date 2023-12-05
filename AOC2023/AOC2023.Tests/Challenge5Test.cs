@@ -15,7 +15,7 @@ namespace AOC2023.Tests
             Challenge5 challenge = new Challenge5();
             var lines = File.ReadAllLines("data/challenge5.txt");
             var result = challenge.CrazyChallenge(lines);
-            Assert.That(result, Is.EqualTo(30));
+            Assert.That(result, Is.EqualTo(35));
         }
     }
 }

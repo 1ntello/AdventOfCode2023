@@ -13,7 +13,7 @@ Console.WriteLine("Hello, World!");
 //Console.WriteLine("final answer: " + result);
 //Console.ReadKey();
 
-Challenge4 challenge3 = new Challenge4();
-var result = challenge3.CalculateTotalScratchCards(File.ReadAllLines("challenges/challenge4.txt"));
+Challenge5 challenge5 = new Challenge5();
+var result = challenge5.CrazyChallenge(File.ReadAllLines("challenges/challenge5.txt"));
 Console.WriteLine("final answer: " + result);
 Console.ReadKey();

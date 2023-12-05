@@ -11,38 +11,38 @@ namespace AOC2023.Challenges
     {
         public class almanac_line 
         {
-            public int destRangeStart;
-            public int sourceRangeStart;
-            public int range; 
+            public long destRangeStart;
+            public long sourceRangeStart;
+            public long range; 
         }
 
-        public int CrazyChallenge(string[] data)
+        public long CrazyChallenge(string[] data)
         {
             var seedsAsStrings = data[0].Split(':')[1].Split(' ');
-            List<int> seeds = new List<int>();
-            List<int> results = new List<int>();
+            List<long> seeds = new List<long>();
+            List<long> results = new List<long>();
             foreach (var s in seedsAsStrings.Where(x => x != ""))
-                seeds.Add(int.Parse(s));
+                seeds.Add(long.Parse(s));
 
             data[0] = "ignore";
             data[1] = "ignore";
-            var parsedData = ParseDataIntoAlmanak(data);
+            var parsedData = ParseDatalongoAlmanak(data);
             foreach (var s in seeds)
             {
-                int sourceValue = s;
-                int destinationValue = 0;
+                long sourceValue = s;
+                long destinationValue = 0;
                 // now the fun begins. We start at map[0] and we have 7
-                for (int i = 0; i < 7; i++)
+                for (long i = 0; i < 7; i++)
                 {
                     var currentMap = parsedData[i];
-                    var matchingLine = currentMap.Where(x => sourceValue > x.sourceRangeStart && sourceValue < (x.sourceRangeStart + x.range)).FirstOrDefault();
+                    var matchingLine = currentMap.Where(x => sourceValue >= x.sourceRangeStart && sourceValue <= (x.sourceRangeStart + x.range)).FirstOrDefault();
                     if (matchingLine == default(almanac_line))
                     {
-                        destinationValue = s;
+                        continue;
                     }
                     else
                     {
-                        var differenceFromSource = s - matchingLine.sourceRangeStart;
+                        var differenceFromSource = sourceValue - matchingLine.sourceRangeStart;
                         destinationValue = matchingLine.destRangeStart + differenceFromSource;
                         sourceValue = destinationValue; // because this the start for the next one 
                     }
@@ -52,13 +52,13 @@ namespace AOC2023.Challenges
             return results.Min();
         }
 
-        public List<almanac_line>[] ParseDataIntoAlmanak(string[] data) 
+        public List<almanac_line>[] ParseDatalongoAlmanak(string[] data) 
         {
-            // we get like 8 lists, each list has lines of int arrrays of 3 max. 
+            // we get like 8 lists, each list has lines of long arrrays of 3 max. 
             // So we start of by stating that line 1 is the seeds we are looking for, but we parse that in the earlier crazy challenge, so we dont care
             List<almanac_line>[] finalData = new List<almanac_line>[8];
             List<almanac_line> mapData = new List<almanac_line>();
-            int mapCounter = 0;
+            long mapCounter = 0;
             foreach (var mapline in data)
             {
                 if(mapline == "ignore")
@@ -79,9 +79,9 @@ namespace AOC2023.Challenges
                     var values = mapline.Split(' ');
                     almanac_line almanac_Line = new almanac_line()
                     {
-                        destRangeStart = int.Parse(values[0]),
-                        sourceRangeStart = int.Parse(values[1]),
-                        range = int.Parse(values[2])
+                        destRangeStart = long.Parse(values[0]),
+                        sourceRangeStart = long.Parse(values[1]),
+                        range = long.Parse(values[2])
                     };
                     mapData.Add(almanac_Line);
                 }
