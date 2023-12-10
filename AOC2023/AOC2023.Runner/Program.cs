@@ -13,7 +13,7 @@ Console.WriteLine("Hello, World!");
 //Console.WriteLine("final answer: " + result);
 //Console.ReadKey();
 
-Challenge5 challenge5 = new Challenge5();
-var result = challenge5.CrazyChallenge(File.ReadAllLines("challenges/challenge5.txt"));
+Challenge6 challenge6 = new Challenge6();
+var result = challenge6.CalculateBigRace(File.ReadAllLines("challenges/challenge6.txt"));
 Console.WriteLine("final answer: " + result);
 Console.ReadKey();
