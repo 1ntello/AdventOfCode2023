@@ -72,7 +72,6 @@ namespace AOC2023.Challenges
                             {
                                 s.Append(c.Value);
                             }
-                            //Console.WriteLine($"{s.ToString()} is adjacent to a { adjacentChars.Where(isSpecialCharacter).First()}");
                             partNumbers.Add(int.Parse(s.ToString()));
                             break;
 

@@ -14,6 +14,8 @@
     <None Remove="challenges\challenge4.txt" />
     <None Remove="challenges\challenge5.txt" />
     <None Remove="challenges\challenge6.txt" />
+    <None Remove="challenges\challenge7.txt" />
+    <None Remove="challenges\challenge8.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +35,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="challenges\challenge6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="challenges\challenge7.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="challenges\challenge8.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
